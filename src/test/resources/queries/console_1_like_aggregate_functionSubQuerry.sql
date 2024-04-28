@@ -1,4 +1,6 @@
 select * from employees;
+--each SQL statement needs to end-with semi-colon
+--SQL language is case insensitive
 select * from departments;
 -- if you have multiple statement, when hit command + enter and then again enter  this statement will run
 
@@ -73,14 +75,15 @@ FROM employees;
 
 SELECT MAX(salary)
 FROM employees
-WHERE salary<2400;
+WHERE salary<2400; -- this code is hardcoded
 --IT IS SECOND --17000
 
 SELECT *
 FROM employees
-WHERE salary = 17000;
+WHERE salary = 17000; -- this code is hardcoded
 
 --INSTEAD OF THESE STEP AND AVOID STATIC INPUT
+--DYNAMICALLY
 
 SELECT *
 FROM employees
@@ -113,7 +116,30 @@ where salary = (select distinct salary
                 offset 13
                     limit 1); --FIRST NEED TO ORDER
 
+--GET ME all employees firstname, lastname who is working currently in IT department
+-- first IT I need to find department ID
+select department_id from departments
+where department_name='IT';
 
+--and then i need to apply sub-query
+select first_name, last_name from employees
+where department_id=(select department_id from departments
+                     where department_name='IT');
+
+--GET ME all employees firstname, lastname who is working currently in Executive department
+select first_name, last_name from employees
+where department_id=(select department_id from departments
+                     where department_name='Executive');
+--display all information from employees who is getting first 7 higgest salary
+
+--find me employees information in sorted manner based salary in desc
+select * from employees
+order by salary desc;
+
+--use that table to apply rownum
+select * from (select * from employees
+               order by salary desc)
+limit(7);
 
 
 

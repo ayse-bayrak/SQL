@@ -8,6 +8,7 @@ SELECT * FROM scrumteam;
 -- RENAME COLUMN : renames the column name
 -- RENAME TO : renames the table name
 
+-- ADDING NEW COLUMN
 ALTER TABLE scrumteam ADD salary Integer NOT NULL;
 
 UPDATE ScrumTeam
@@ -23,14 +24,14 @@ UPDATE ScrumTeam
 SET salary = 90000
 WHERE Emp_ID = 4;
 
---rename the column
+--RENAME COLUMN
 
 ALTER TABLE scrumteam RENAME COLUMN salary to annual_salary;
 
 select * from scrumteam;
 
 
---delete/drop column
+--delete/DROP COLUMN
 
 ALTER TABLE scrumteam DROP COLUMN annual_salary;
 

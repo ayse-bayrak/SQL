@@ -30,16 +30,21 @@ create table syntax:
 -- •UNIQUE —the value of the column must be unique across the whole table.
 -- •PRIMARY KEY — Combination of both NOT NULL and UNIQUE constraints.
 -- •REFERENCES-OtherTable (PKColumn)
+-- CHECK
+--STATUS
 
 
 create table ScrumTeam(
     Emp_ID Integer PRIMARY KEY,--FIRST COLUMN
-    FirstName varchar(30) NOT NULL,
-    LastName varchar(30),
-    JobTitle varchar(20)
+    FirstName varchar(30) NOT NULL,-- another column
+    LastName varchar(30),-- what is the length of constraints
+    JobTitle varchar(20),
+    email varchar(50) UNIQUE,
+    age Integer CHECK ( age>18 ),
+    status varchar(50) DEFAULT 'ACTIVE'
 );
 
-select * from scrumteam;
+
 
 --INSERT DATA TO TABLE
 /*
@@ -55,6 +60,20 @@ INSERT INTO scrumteam VALUES (2, 'HAROLD', 'FINCH', 'Developer');
 
 INSERT INTO scrumteam VALUES (3, 'Ayse', 'Gunes Bayrak', 'Developer');
 INSERT INTO scrumteam VALUES (4, 'Ziya', 'Bayrak', 'Pharmacist');
+
+
+create table students(
+                         student_id Integer PRIMARY KEY,--FIRST COLUMN
+                         FirstName varchar(30) NOT NULL,-- another column
+                         LastName varchar(30),-- what is the length of constraints
+                         email varchar(50) UNIQUE,
+                         age Integer CHECK (age>18),
+                         status varchar(50) DEFAULT 'ACTIVE'
+);
+select * from students;
+insert into students (student_id, FirstName, LastName, email, age)
+values (1, 'mike', 'mike@gmail.com', 19);
+
 
 --UPDATE data
 /*
@@ -77,4 +96,5 @@ WHERE condition;
 DELETE FROM ScrumTeam
 WHERE Emp_ID=3;
 
+--to save changes in database we need to use commit or commit work
 COMMIT-- TO KIND OF SAVE
