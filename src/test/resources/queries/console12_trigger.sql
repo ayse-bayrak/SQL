@@ -1,3 +1,6 @@
+--TRIGGER
+--PURPOSE ==> who changed the data and what was that
+
 DROP TABLE IF EXISTS mentors;
 CREATE TABLE mentors(
                         id INT GENERATED ALWAYS AS IDENTITY,
@@ -47,6 +50,14 @@ WHERE id = 2;
 
 UPDATE mentors
 SET last_name = 'ABC'
+WHERE id = 2;
+
+UPDATE mentors
+SET last_name = 'DEF'
+WHERE id = 2;
+
+UPDATE mentors
+SET last_name = 'GHI'
 WHERE id = 2;
 
 SELECT * FROM mentors;
