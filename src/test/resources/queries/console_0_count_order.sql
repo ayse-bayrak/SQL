@@ -24,6 +24,10 @@ where salary>8000;
 select count (distinct first_name)
 from employees;
 
+--how many unique first names we have
+select count (*)
+from departments;
+
 --get me all employees information based on
 --who is making more salary to low salary
 --sorting

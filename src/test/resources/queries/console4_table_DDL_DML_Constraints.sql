@@ -70,9 +70,11 @@ create table students(
                          age Integer CHECK (age>18),
                          status varchar(50) DEFAULT 'ACTIVE'
 );
+
 select * from students;
+
 insert into students (student_id, FirstName, LastName, email, age)
-values (1, 'mike', 'mike@gmail.com', 19);
+values (1, 'mike', 'smith', 'mike@gmail.com', 19);
 
 
 --UPDATE data

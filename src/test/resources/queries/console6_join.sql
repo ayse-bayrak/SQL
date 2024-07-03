@@ -14,6 +14,7 @@ on customer.address_id = address.address_id;
 
 --left outer/ left join --> there is no difference
 
+select * from customer;
 Select first_name, last_name, address, phone
 from customer right join address
 on customer.address_id = address.address_id;

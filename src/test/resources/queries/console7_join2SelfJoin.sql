@@ -35,9 +35,11 @@ on d.location_id = l.location_id
 join countries c
 on l.country_id = c.country_id;
 
+select *
+from employees;
 --SELF JOIN -- using same table, we don't use self keyword
 -- Join the table to itself-- we must use a table alias
---get employee id, first_name, last name, manager name manger last name
+--get employee id, first_name, last name, manager name, manager last name
 select e1.employee_id, e1.first_name, e1.last_name, e2.first_name as manager_name, e2.last_name as manager_lastName
 from employees e1 join employees e2
 on e1.manager_id=e2.employee_id;

@@ -12,7 +12,7 @@
 -- 1-Can you display sales person names ending with “th”?
 select sp_name
 from SalesPerson
-where sp_name like ‘%th’;
+where sp_name like '%th';
 
 -- 2-Can you display company names for company_id 21,32,412,43,25 ?
 Select company_name

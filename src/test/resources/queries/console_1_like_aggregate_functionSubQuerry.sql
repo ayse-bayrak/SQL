@@ -1,5 +1,5 @@
 select * from employees;
---each SQL statement needs to end-with semi-colon
+--each SQL statement needs to end-with semi-colon-;
 --SQL language is case insensitive
 select * from departments;
 -- if you have multiple statement, when hit command + enter and then again enter  this statement will run
@@ -130,15 +130,20 @@ where department_id=(select department_id from departments
 select first_name, last_name from employees
 where department_id=(select department_id from departments
                      where department_name='Executive');
+
 --display all information from employees who is getting first 7 higgest salary
 
 --find me employees information in sorted manner based salary in desc
 select * from employees
 order by salary desc;
 
---use that table to apply rownum
+--use that table to apply row num
 select * from (select * from employees
                order by salary desc)
+limit(7);
+-- is it same this last 2 query
+select * from employees
+order by salary desc
 limit(7);
 
 
